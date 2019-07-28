@@ -2,25 +2,16 @@ package arrays
 
 import (
 	"fmt"
-	"reflect"
 	"testing"
+	"github.com/aszenz/basic-golang/go-test-helpers"
 )
-
-func checkSlicesSum(t *testing.T, got []int, want []int, given [][]int) {
-	t.Helper()
-	if !reflect.DeepEqual(got, want) {
-		t.Errorf("expected %d but got %d given %v", want, got, given)
-	}
-}
 
 func TestArraySum(t *testing.T) {
 	t.Run("collection of any size of numbers", func(t *testing.T) {
 		numbers := []int{1, 2, 3, 4, 5}
 		got := ArraySum(numbers)
 		expected := 15
-		if got != expected {
-			t.Errorf("expected %d but got %d given %v", expected, got, numbers)
-		}
+		testhelpers.CheckArraySum(t, got, expected, numbers)	
 	})
 }
 
@@ -43,7 +34,7 @@ func TestSlicesSum(t *testing.T) {
 		slices := [][]int{[]int{1, 2}, []int{3, 4}, []int{5}}
 		got := SlicesSum(slices)
 		expected := []int{3, 7, 5}
-		checkSlicesSum(t, got, expected, slices)
+		testhelpers.CheckSlicesSum(t, got, expected, slices)
 	})
 }
 
@@ -66,13 +57,13 @@ func TestSlicesTailSum(t *testing.T) {
 		slices := [][]int{[]int{1, 2, 3}, []int{3, 4}, []int{5}, []int{2, 3, 6, 5}}
 		got := SlicesTailSum(slices)
 		expected := []int{5, 4, 0, 14}
-		checkSlicesSum(t, got, expected, slices)
+		testhelpers.CheckSlicesSum(t, got, expected, slices)
 	})
 	t.Run("safely run sum slices", func(t *testing.T) {
 		slices := [][]int{[]int{2, 3, 4}, []int{}, []int{2, 9, 1}}
 		got := SlicesTailSum(slices)
 		expected := []int{7, 0, 10}
-		checkSlicesSum(t, got, expected, slices)
+		testhelpers.CheckSlicesSum(t, got, expected, slices)
 	})
 }
 
