@@ -15,13 +15,13 @@ func getGreetingPrefix(lang string) string {
 
 	prefix := ""
 	switch lang {
-		case dutchLangCode:
-			prefix = dutchHello
-		case frenchLangCode:
-			prefix = frenchHello
-		default:
-			prefix = englishHello
-	}	
+	case dutchLangCode:
+		prefix = dutchHello
+	case frenchLangCode:
+		prefix = frenchHello
+	default:
+		prefix = englishHello
+	}
 	return prefix
 }
 

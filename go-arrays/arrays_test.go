@@ -3,6 +3,7 @@ package arrays
 import (
 	"fmt"
 	"testing"
+
 	"github.com/aszenz/basic-golang/go-test-helpers"
 )
 
@@ -11,7 +12,7 @@ func TestArraySum(t *testing.T) {
 		numbers := []int{1, 2, 3, 4, 5}
 		got := ArraySum(numbers)
 		expected := 15
-		testhelpers.CheckArraySum(t, got, expected, numbers)	
+		testhelpers.CheckArraySum(t, got, expected, numbers)
 	})
 }
 

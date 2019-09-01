@@ -7,7 +7,7 @@ import (
 
 func ExampleRepeatCharacter() {
 	res := RepeatCharacter("i", 3)
-	fmt.Println(res)	
+	fmt.Println(res)
 	// Output: iii
 }
 func TestIteration(t *testing.T) {
@@ -19,7 +19,7 @@ func TestIteration(t *testing.T) {
 }
 
 func BenchmarkRepeat(b *testing.B) {
-	for i:= 0; i < b.N ; i++ {
+	for i := 0; i < b.N; i++ {
 		RepeatCharacter("a", 5)
 	}
 }
