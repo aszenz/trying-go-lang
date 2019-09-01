@@ -3,6 +3,8 @@ package integers
 import (
 	"fmt"
 	"testing"
+
+	"github.com/aszenz/basic-golang/go-test-helpers"
 )
 
 func ExampleAdd() {
@@ -13,7 +15,5 @@ func ExampleAdd() {
 func TestAdder(t *testing.T) {
 	sum := Add(2, 3)
 	expected := 5
-	if sum != expected {
-		t.Errorf("expected %d but got '%d'", expected, sum)
-	}
+	testhelpers.CheckIntegersEqual(t, sum, expected, "add")
 }

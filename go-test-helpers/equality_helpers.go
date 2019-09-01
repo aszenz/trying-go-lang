@@ -17,3 +17,11 @@ func CheckIntegersEqual(t *testing.T, got int, want int, from string) {
 		t.Errorf("expected %d but got %d from %s", want, got, from)
 	}
 }
+
+// AssertStringsEqual checks if two strings are equal
+func AssertStringsEqual(t *testing.T, got string, want string) {
+	t.Helper()
+	if got != want {
+		t.Errorf("expected %s but got %s", want, got)
+	}
+}
