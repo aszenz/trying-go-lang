@@ -22,6 +22,6 @@ func CheckIntegersEqual(t *testing.T, got int, want int, from string) {
 func AssertStringsEqual(t *testing.T, got string, want string) {
 	t.Helper()
 	if got != want {
-		t.Errorf("expected %s but got %s", want, got)
+		t.Errorf("expected string \"%s\" but got \"%s\"", want, got)
 	}
 }
