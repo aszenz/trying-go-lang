@@ -19,7 +19,7 @@ type DefaultSleeper struct {
 }
 
 // Sleep Pauses the execution time by 1 sec
-func (d *DefaultSleeper) Sleep() {
+func (d DefaultSleeper) Sleep() {
 	d.sleep(d.duration)
 }
 
